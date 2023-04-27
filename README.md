@@ -5,69 +5,59 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <h2 align="center">Prueba Técnica - Avila Tek</h2>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting started
 
-## Installation
+1. Clonar el proyecto.
+2. Ejecutar: `npm install` .
+3. Clonar el archivo `.env.template` y renombrarlo a `.env`.
+4. Cambiar los valores de las variables de entorno a sus valores reales.
+5. Ejecutar proyecto en modo desarrollo: npm run start:dev
 
-```bash
-$ npm install
-```
+---
 
-## Running the app
+## API Endpoints
 
-```bash
-# development
-$ npm run start
+Todos con prefijo {{urlBase}} Ej. http://localhost:3000
 
-# watch mode
-$ npm run start:dev
+1. SignUp: `/api/auth/signup`
+2. SignUp: `/api/auth/signin`
+3. Logout: N/A
+4. Buscar usuario `/api/auth?term`
+5. Paginación de todos los usuarios `/api/auth/all?limit=&offset=`
 
-# production mode
-$ npm run start:prod
-```
+---
 
-## Test
+## Comments
 
-```bash
-# unit tests
-$ npm run test
+La estrategia utilizada para el Inicio de sesión ha sido con JWT y este tipo
+de autenticación no tiene estado por lo tanto no puede ser invalidado hasta
+que expire, evitando que el servidor deba hacer seguimiento
+de los usuarios autenticados, por lo tanto no se debe hacer nada del lado del
+servidor para cerrar sesión de un usuario, esto se maneja del lado del usuario
+eliminando el token de acceso.
 
-# e2e tests
-$ npm run test:e2e
+También es posible crear una lista de tokens agregando el token de acceso actual
+a la misma y si el token se encontrase comprometido, se elimina de la lista,
+no obstante, esto añade más complejidad a la respuesta del ejercicio y por lo
+tanto no se ejecutó, adicionalmente, este método incide en el performance de las
+aplicaciones que lo implementen.
 
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+---
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Gabriela Torres](https://www.linkedin.com/in/gabriela-torres-hernandez/?locale=en_US)
+- Twitter - [@bygadev](https://twitter.com/bygadev)
+
+---
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+[MIT licensed](LICENSE).
+
+---
